@@ -1,6 +1,3 @@
-gem "rom-sql", '~> 0.3.2'
-gem "rom-rails", '~> 0.2.1'
-
 gem_group(:development, :test) do
   gem "rspec"
   gem "rspec-rails"
@@ -16,8 +13,6 @@ create_file "Procfile" do
   file_lines << "web: bin/rails s"
   file_lines.join("\n")
 end
-
-application "require 'rom-rails'"
 
 run 'bundle'
 
