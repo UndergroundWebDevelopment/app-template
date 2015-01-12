@@ -80,7 +80,7 @@ after_bundle do
 
   # Devise
   generate "devise:install"
-  generate "devise model User"
+  generate "devise User"
 
   # Pundit
   generate "pundit:install"
