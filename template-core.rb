@@ -4,6 +4,7 @@ gem 'autoprefixer-rails'
 gem 'devise', "~> 3.4.1"
 gem 'pundit', "~> 0.3.0"
 gem 'use_case', "~> 1.0.2"
+gem 'reform', "~> 1.2.5"
 gem 'virtus', "~> 1.0.4"
 gem 'haml-rails', "~> 0.7.0"
 gem 'bootstrap-sass-extras', "~> 0.0.6"
@@ -11,6 +12,7 @@ gem 'bootstrap-sass-extras', "~> 0.0.6"
 uncomment_lines 'Gemfile', /gem 'bcrypt'/
 
 gem_group(:development, :test) do
+  gem "mail_safe"
   gem "rspec"
   gem "rspec-rails"
   gem "capybara"
@@ -84,6 +86,24 @@ after_bundle do
 
   # Pundit
   generate "pundit:install"
+
+  # Ignore rails doc files, Vim/Emacs swap files, .DS_Store, and more
+  # ===================================================
+  run "cat << EOF >> .gitignore
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*.log
+/tmp
+database.yml
+doc/
+*.swp
+*~
+.project
+.idea
+.secret
+.DS_Store
+EOF"
 
   # Postgres:
   append_to_file ".gitignore", "vendor/postgresql"
