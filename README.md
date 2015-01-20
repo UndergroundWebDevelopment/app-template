@@ -6,5 +6,5 @@ DB easy.
 
 `rails new --database=postgres --template TEMPLATE_PATH -T APP_PATH`
 
-TEMPLATE_PATH ought to point towards the template.rb file.
+TEMPLATE_PATH ought to point towards the template-core.rb file.
 APP_PATH should be desired location of the generated app.
